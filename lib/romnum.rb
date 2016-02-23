@@ -11,6 +11,8 @@ class RomNumConverter
       @roman = "I"
     elsif num == 2
       @roman = "II"
+    elsif num == 3
+      @roman = "III"
     end
   end
 end

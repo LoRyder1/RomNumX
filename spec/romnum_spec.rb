@@ -2,6 +2,10 @@ describe 'RomNumConverter' do
   let(:num) {double('num')}
   subject {RomNumConverter.new}
 
+  def conv_num num
+    subject.convert_arabic(num)
+  end
+
   describe '#convert_arabic' do
 
     it 'method is defined' do
@@ -13,13 +17,18 @@ describe 'RomNumConverter' do
     end
 
     it "converts 1 to 'I'" do
-      subject.convert_arabic(1)
+      conv_num 1
       expect(subject.roman).to eq "I"
     end
 
     it "converts 2 to 'II'" do
-      subject.convert_arabic(2)
+      conv_num 2
       expect(subject.roman).to eq "II"
+    end
+
+    it "converts 3 to 'III'" do 
+      conv_num 3
+      expect(subject.roman).to eq "III"
     end
   end
 end
