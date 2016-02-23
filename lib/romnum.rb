@@ -30,7 +30,7 @@ class RomNumConverter
     end
   end
 
-  def convert_numeral
+  def convert_numeral input
     
   end
 end
