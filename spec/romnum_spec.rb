@@ -64,6 +64,10 @@ describe 'RomNumConverter' do
     it 'method is defined' do
       expect(RomNumConverter.method_defined?(:convert_numeral)).to eq true
     end
+
+    it 'method takes one argument' do
+      expect(subject.method(:convert_numeral).arity).to eq 1
+    end
   end
 end
 
