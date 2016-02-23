@@ -1,7 +1,7 @@
 describe 'RomNumConverter' do
   subject {RomNumConverter.new}
 
-  def conv_num num
+  def conv_ar num
     subject.convert_arabic(num)
   end
 
@@ -16,47 +16,51 @@ describe 'RomNumConverter' do
     end
 
     it "converts 1 to 'I'" do
-      conv_num 1
+      conv_ar 1
       expect(subject.roman).to eq "I"
     end
 
     it "converts 2 to 'II'" do
-      conv_num 2
+      conv_ar 2
       expect(subject.roman).to eq "II"
     end
 
     it "add key value to final string" do 
-      conv_num 3
+      conv_ar 3
       expect(subject.roman).to eq "III"
     end
 
     context 'using modulus to redefine input' do
 
       it 'make sure other keys are not added' do
-        conv_num 4
+        conv_ar 4
         expect(subject.roman).to eq "IV"
       end
 
       it "convert 5 to 'V'" do
-        conv_num 5
+        conv_ar 5
         expect(subject.roman).to eq "V"
       end
 
       it "converts 9 to 'IX" do
-        conv_num 9
+        conv_ar 9
         expect(subject.roman).to eq 'IX'
       end
 
       it "converts 1066 to 'MLXVI'" do
-        conv_num 1066
+        conv_ar 1066
         expect(subject.roman).to eq 'MLXVI'
       end
 
       it "converts 1989 to 'MCMLXXXIX'" do 
-        conv_num 1989
+        conv_ar 1989
         expect(subject.roman).to eq 'MCMLXXXIX'
       end
     end
+  end
+
+  def conv_num num
+    subject.convert_numeral(num)
   end
 
   describe '#convert_numeral' do
@@ -69,7 +73,10 @@ describe 'RomNumConverter' do
       expect(subject.method(:convert_numeral).arity).to eq 1
     end
 
-    it "converts 'I' to 1"
+    it "converts 'I' to 1" do
+      conv_num 1
+      expect(subject.arabic).to eq 1
+    end
 
     it "converts 'II' to 2"
 
@@ -78,7 +85,7 @@ describe 'RomNumConverter' do
     it "converts 'IV' to 4"
 
     context 'user test cases' do
-      
+
       it "converts 'IX' to 9"
 
       it "converts 'MLXVI' to 1066"
