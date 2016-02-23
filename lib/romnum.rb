@@ -29,4 +29,8 @@ class RomNumConverter
       input = input % num
     end
   end
+
+  def convert_numeral
+    
+  end
 end
