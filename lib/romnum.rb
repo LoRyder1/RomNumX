@@ -1,4 +1,5 @@
 ROMAN_NUMERALS = {
+  4 => "IV",
   1 => "I"
 }
 class RomNumConverter
@@ -9,9 +10,11 @@ class RomNumConverter
   end
 
   def convert_arabic input
+    @roman = ""
     @arabic = input
     ROMAN_NUMERALS.each_key do |num|
       @roman += ROMAN_NUMERALS[num] * (input/num)
+      input = input % num
     end
   end
 end

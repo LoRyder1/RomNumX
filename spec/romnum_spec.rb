@@ -26,9 +26,22 @@ describe 'RomNumConverter' do
       expect(subject.roman).to eq "II"
     end
 
-    it "converts 3 to 'III'" do 
+    it "add key value to final string" do 
       conv_num 3
       expect(subject.roman).to eq "III"
+    end
+
+    context 'using modulus to redefine input' do
+
+      it 'make sure other keys are not added' do
+        conv_num 4
+        expect(subject.roman).to eq "IV"
+      end
+
+      it "convert 5 to 'V'" do
+        conv_num 5
+        expect(subject.roman).to eq "V"
+      end
     end
   end
 end
