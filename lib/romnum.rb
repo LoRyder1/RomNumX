@@ -18,11 +18,10 @@ class RomNumConverter
   attr_reader :roman, :arabic
   def initialize
     @roman = ""
-    @arabic = nil
+    @arabic = 0
   end
 
   def convert_arabic input
-    @roman = ""
     @arabic = input
     ROMAN_NUMERALS.each_key do |num|
       @roman += ROMAN_NUMERALS[num] * (input/num)
@@ -31,6 +30,15 @@ class RomNumConverter
   end
 
   def convert_numeral input
-    
+    @roman = input
+    ROMAN_NUMERALS.values.each do |roman|
+      while input.start_with?(roman)
+        @arabic += ROMAN_NUMERALS.invert[roman]
+        input = input.slice(roman.length, input.length)
+      end
+    end
   end
 end
+
+# 'IV' => 4
+# 'I' => 1

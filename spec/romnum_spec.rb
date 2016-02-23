@@ -74,11 +74,14 @@ describe 'RomNumConverter' do
     end
 
     it "converts 'I' to 1" do
-      conv_num 1
+      conv_num 'I'
       expect(subject.arabic).to eq 1
     end
 
-    it "converts 'II' to 2"
+    it "converts 'II' to 2" do
+      conv_num 'II'
+      expect(subject.arabic).to eq 2
+    end
 
     it "converts 'III' to 3"
 
