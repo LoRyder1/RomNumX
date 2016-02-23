@@ -1,5 +1,4 @@
 describe 'RomNumConverter' do
-  let(:num) {double('num')}
   subject {RomNumConverter.new}
 
   def conv_num num
@@ -59,4 +58,12 @@ describe 'RomNumConverter' do
       end
     end
   end
+
+  describe '#convert_numeral' do
+
+    it 'method is defined' do
+      expect(RomNumConverter.method_defined?(:convert_numeral)).to eq true
+    end
+  end
 end
+
