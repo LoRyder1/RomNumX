@@ -68,6 +68,23 @@ describe 'RomNumConverter' do
     it 'method takes one argument' do
       expect(subject.method(:convert_numeral).arity).to eq 1
     end
+
+    it "converts 'I' to 1"
+
+    it "converts 'II' to 2"
+
+    it "converts 'III' to 3"
+
+    it "converts 'IV' to 4"
+
+    context 'user test cases' do
+      
+      it "converts 'IX' to 9"
+
+      it "converts 'MLXVI' to 1066"
+
+      it "converts 'MCMLXXXIX' to 1989"
+    end
   end
 end
 
