@@ -83,17 +83,32 @@ describe 'RomNumConverter' do
       expect(subject.arabic).to eq 2
     end
 
-    it "converts 'III' to 3"
+    it "converts 'III' to 3" do
+      conv_num 'III'
+      expect(subject.arabic).to eq 3
+    end
 
-    it "converts 'IV' to 4"
+    it "converts 'IV' to 4" do
+      conv_num 'IV'
+      expect(subject.arabic).to eq 4
+    end
 
     context 'user test cases' do
 
-      it "converts 'IX' to 9"
+      it "converts 'IX' to 9" do
+        conv_num 'IX'
+        expect(subject.arabic).to eq 9
+      end
 
-      it "converts 'MLXVI' to 1066"
+      it "converts 'MLXVI' to 1066" do
+        conv_num 'MLXVI'
+        expect(subject.arabic).to eq 1066
+      end
 
-      it "converts 'MCMLXXXIX' to 1989"
+      it "converts 'MCMLXXXIX' to 1989" do
+        conv_num 'MCMLXXXIX'
+        expect(subject.arabic).to eq 1989
+      end
     end
   end
 end
