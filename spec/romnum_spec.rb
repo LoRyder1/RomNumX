@@ -48,8 +48,11 @@ describe 'RomNumConverter' do
         expect(subject.roman).to eq 'IX'
       end
 
-      it "converts 1066 to 'MLXVI'"
-
+      it "converts 1066 to 'MLXVI'" do
+        conv_num 1066
+        expect(subject.roman).to eq 'MLXVI'
+      end
+      
       it "converts 1989 to 'MCMLXXXIX'"
     end
   end
