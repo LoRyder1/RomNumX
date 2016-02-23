@@ -41,6 +41,3 @@ class RomNumConverter
     end
   end
 end
-
-# 'IV' => 4
-# 'I' => 1

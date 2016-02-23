@@ -112,4 +112,3 @@ describe 'RomNumConverter' do
     end
   end
 end
-
