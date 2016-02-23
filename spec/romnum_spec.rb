@@ -16,5 +16,10 @@ describe 'RomNumConverter' do
       subject.convert_arabic(1)
       expect(subject.roman).to eq "I"
     end
+
+    it "converts 2 to 'II'" do
+      subject.convert_arabic(2)
+      expect(subject.roman).to eq "II"
+    end
   end
 end

@@ -7,6 +7,10 @@ class RomNumConverter
 
   def convert_arabic num
     @arabic = num
-    @roman = "I"
+    if num == 1
+      @roman = "I"
+    elsif num == 2
+      @roman = "II"
+    end
   end
 end
