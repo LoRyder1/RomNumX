@@ -1,5 +1,5 @@
 Given(/^I have started the converter$/) do
-  @converter = RomaNumConverter.new
+  @converter = RomNumConverter.new
 end
 
 When(/^I enter (\d+)$/) do |num|
