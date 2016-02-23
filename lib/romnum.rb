@@ -41,3 +41,8 @@ class RomNumConverter
     end
   end
 end
+
+# if input starts with match; add to solution
+# if match; slice the rest of string and redefine input
+# 4 and 9 are special cases where you need to define them
+# 1, 5, 10 are defined as normal

@@ -20,19 +20,19 @@ describe 'RomNumConverter' do
       expect(subject.roman).to eq "I"
     end
 
-    it "converts 2 to 'II'" do
+    it "add key value to final string" do
       conv_ar 2
       expect(subject.roman).to eq "II"
     end
 
-    it "add key value to final string" do 
+    it 'only one substraction can be made' do 
       conv_ar 3
       expect(subject.roman).to eq "III"
     end
 
     context 'using modulus to redefine input' do
 
-      it 'make sure other keys are not added' do
+      it "the '1' symbols can only be substracted once" do
         conv_ar 4
         expect(subject.roman).to eq "IV"
       end
@@ -42,7 +42,7 @@ describe 'RomNumConverter' do
         expect(subject.roman).to eq "V"
       end
 
-      it "converts 9 to 'IX" do
+      it "make sure other keys are not added" do
         conv_ar 9
         expect(subject.roman).to eq 'IX'
       end
@@ -55,6 +55,16 @@ describe 'RomNumConverter' do
       it "converts 1989 to 'MCMLXXXIX'" do 
         conv_ar 1989
         expect(subject.roman).to eq 'MCMLXXXIX'
+      end
+
+      it "converts 1459 to 'MCDLIX'" do
+        conv_ar 1459
+        expect(subject.roman).to eq 'MCDLIX'
+      end
+
+      it "converts 99 to 'XCIX'" do
+        conv_ar 99
+        expect(subject.roman).to eq 'XCIX'
       end
     end
   end
@@ -78,7 +88,7 @@ describe 'RomNumConverter' do
       expect(subject.arabic).to eq 1
     end
 
-    it "converts 'II' to 2" do
+    it "make sure to slice string for each iteration" do
       conv_num 'II'
       expect(subject.arabic).to eq 2
     end
@@ -88,7 +98,7 @@ describe 'RomNumConverter' do
       expect(subject.arabic).to eq 3
     end
 
-    it "converts 'IV' to 4" do
+    it "make sure slice eliminates the rest of string" do
       conv_num 'IV'
       expect(subject.arabic).to eq 4
     end

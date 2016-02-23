@@ -7,3 +7,5 @@ The symbols 'I', 'X', 'C', and 'M' can be repeated at most 3 times in a row. The
 Feature 1 - Converting Arabic to Roman
 
 Feature 2 - Converting Roman to Arabic
+
+The test names should describe a behavior. The tests are telling me that it "should convert 9 to IX" but I'm not really sure why. Consider a test name that would describe that there is actually a subtraction occurring: "when a smaller numeral is placed before a larger numeral then the smaller numeral is subtracted" for example. Sometimes the description of the problem or acceptance criteria is a good starting point for a testable behavior. "The '5' symbols ('V', 'L', and 'D') can never be subtracted." taken from the kata description could be a worthwhile test too, possibly.
