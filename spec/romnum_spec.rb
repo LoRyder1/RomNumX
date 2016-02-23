@@ -11,5 +11,10 @@ describe 'RomNumConverter' do
     it 'method should take in one argument' do
       expect(subject.method(:convert_arabic).arity).to eq 1
     end
+
+    it "converts 1 to 'I'" do
+      subject.convert_arabic(1)
+      expect(subject.roman).to eq "I"
+    end
   end
 end
