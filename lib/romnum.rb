@@ -17,12 +17,13 @@ ROMAN_NUMERALS = {
 class RomNumConverter
   attr_reader :roman, :arabic
   def initialize
-    @roman = ""
+    @roman = ''
     @arabic = 0
   end
 
   def convert_arabic input
     @arabic = input
+    @roman = ''
     ROMAN_NUMERALS.each_key do |num|
       @roman += ROMAN_NUMERALS[num] * (input/num)
       input = input % num
@@ -31,6 +32,7 @@ class RomNumConverter
 
   def convert_numeral input
     @roman = input
+    @arabic = 0
     ROMAN_NUMERALS.values.each do |roman|
       while input.start_with?(roman)
         @arabic += ROMAN_NUMERALS.invert[roman]
