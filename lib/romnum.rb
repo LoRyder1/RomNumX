@@ -1,3 +1,6 @@
+ROMAN_NUMERALS = {
+  1 => "I"
+}
 class RomNumConverter
   attr_reader :roman, :arabic
   def initialize
@@ -5,14 +8,10 @@ class RomNumConverter
     @arabic = nil
   end
 
-  def convert_arabic num
-    @arabic = num
-    if num == 1
-      @roman = "I"
-    elsif num == 2
-      @roman = "II"
-    elsif num == 3
-      @roman = "III"
+  def convert_arabic input
+    @arabic = input
+    ROMAN_NUMERALS.each_key do |num|
+      @roman += ROMAN_NUMERALS[num] * (input/num)
     end
   end
 end
